@@ -28,7 +28,7 @@ namespace ChaosTriggerShatteredRealityMenus
 
         public virtual void Initialize()
         {
-
+            //test
         }
 
         public virtual void LoadContent(ContentManager Content)

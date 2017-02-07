@@ -69,6 +69,7 @@ namespace ChaosTriggerShatteredRealityMenus
                     nextScreen = "OptionsMenu";
                 }
             }
+
             else if(minusButton.CheckMouseCollision(newState))
             {
                 minusButton.Update(2);
@@ -81,6 +82,7 @@ namespace ChaosTriggerShatteredRealityMenus
                     nextScreen = "OptionsMenu";
                 }
             }
+
             else if(plusButton.CheckMouseCollision(newState))
             {
                 plusButton.Update(2);
@@ -90,9 +92,10 @@ namespace ChaosTriggerShatteredRealityMenus
                 }
                 else
                 {
-                    nextScreen = "OptionsMenu";
+                     nextScreen = "OptionsMenu";
                 }
             }
+
             else
             {
                 nextScreen = "OptionsMenu"; //Resets the frames of the buttons if mouse isn't colliding with them
@@ -113,6 +116,7 @@ namespace ChaosTriggerShatteredRealityMenus
             backButton.Draw(spriteBatch, Color.White);
             spriteBatch.End();
         }
+
         public override void SetDefaultScreen()
         {
             nextScreen = "OptionsMenu";
