@@ -101,16 +101,19 @@ namespace ChaosTriggerShatteredRealityMenus
             currentScreen.Update(gameTime);
             if(currentScreen.GetNextScreen() == "MainMenu")
             {
+                previousScreen = titleScreen;
                 currentScreen = mainMenu;
             }
 
             else if(currentScreen.GetNextScreen() == "LoadMenu")
             {
+                previousScreen = mainMenu;
                 currentScreen = loadMenu;
             }
 
             else if(currentScreen.GetNextScreen() == "OptionsMenu")
             {
+                previousScreen = mainMenu;
                 currentScreen = optionsMenu;
             }
 
@@ -118,18 +121,24 @@ namespace ChaosTriggerShatteredRealityMenus
             {
                 currentScreen = titleScreen;
             }
+
             else if(currentScreen.GetNextScreen() == "CognitiveMediaScreen")
             {
                 currentScreen = creditsScreen;
             }
+
             else if(currentScreen.GetNextScreen() == "PauseMenu")
             {
+                previousScreen = gameplay;
                 currentScreen = pauseMenu;
             }
+
             else if(currentScreen.GetNextScreen() == "Gameplay")
             {
+                previousScreen = loadMenu;
                 currentScreen = gameplay;
             }
+
             string newScreen = currentScreen.GetNextScreen();
             if(oldScreen != newScreen)
             {

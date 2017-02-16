@@ -55,7 +55,7 @@ namespace ChaosTriggerShatteredRealityMenus
                 newGameButton.Update(2);
                 if(MouseButtonClicked())
                 {
-                    nextScreen = "MainMenu";
+                    nextScreen = "Gameplay";
                 }
                 else
                 {
