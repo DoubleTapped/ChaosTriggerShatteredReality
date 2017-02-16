@@ -34,6 +34,7 @@ namespace ChaosTriggerShatteredRealityMenus
         CreditsScreen creditsScreen;
         CognitiveMediaScreen cognitiveMediaScreen;
         PauseMenu pauseMenu;
+        Gameplay gameplay;
 
         public ScreenManager()
         {
@@ -49,7 +50,8 @@ namespace ChaosTriggerShatteredRealityMenus
             titleScreen = new TitleScreen();
             creditsScreen = new CreditsScreen();
             cognitiveMediaScreen = new CognitiveMediaScreen();
-            pauseMenu = new PauseMenu();          
+            pauseMenu = new PauseMenu();
+            gameplay = new Gameplay();    
         }
 
         protected override void Initialize()
@@ -69,6 +71,7 @@ namespace ChaosTriggerShatteredRealityMenus
             creditsScreen.LoadContent(Content);
             cognitiveMediaScreen.LoadContent(Content);
             pauseMenu.LoadContent(Content);
+            gameplay.LoadContent(Content);
             MediaPlayer.IsRepeating = true;
             menuMusic = Content.Load<Song>("Menu Music");
             bossMusic = Content.Load<Song>("Boss Music");
@@ -122,6 +125,10 @@ namespace ChaosTriggerShatteredRealityMenus
             else if(currentScreen.GetNextScreen() == "PauseMenu")
             {
                 currentScreen = pauseMenu;
+            }
+            else if(currentScreen.GetNextScreen() == "Gameplay")
+            {
+                currentScreen = gameplay;
             }
             string newScreen = currentScreen.GetNextScreen();
             if(oldScreen != newScreen)

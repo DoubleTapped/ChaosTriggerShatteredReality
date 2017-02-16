@@ -75,6 +75,7 @@ namespace ChaosTriggerShatteredRealityMenus
                 minusButton.Update(2);
                 if(MouseButtonClicked())
                 {
+                    buttonClickSound.Play();
                     MediaPlayer.Volume -= .1f; //Lowers music volume if minus button is clicked
                 }
                 else
@@ -88,6 +89,7 @@ namespace ChaosTriggerShatteredRealityMenus
                 plusButton.Update(2);
                 if(MouseButtonClicked())
                 {
+                    buttonClickSound.Play();
                     MediaPlayer.Volume += .1f; //Raises music volume is plus button is clicked
                 }
                 else

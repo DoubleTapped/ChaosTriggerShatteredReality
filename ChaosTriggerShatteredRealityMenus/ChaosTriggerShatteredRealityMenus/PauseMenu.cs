@@ -29,6 +29,8 @@ namespace ChaosTriggerShatteredRealityMenus
             nextScreen = "PauseMenu"; //Sets the current screen to pause menu
             font = Content.Load<SpriteFont>("Menu");
             backButton = new ButtonCollision(Content, new Vector2(350, 350), "Back Button Highlight", 2, 14, 3);
+            exitButton = new ButtonCollision(Content, new Vector2(350, 400), "Exit Highlight", 2, 14, 3);
+            optionsButton = new ButtonCollision(Content, new Vector2(350, 450), "Options Highlight", 2, 14, 3);
             pauseBanner = Content.Load<Texture2D>("pause menu");
         }
 
@@ -45,6 +47,7 @@ namespace ChaosTriggerShatteredRealityMenus
                 backButton.Update(2);
                 if(MouseButtonClicked())
                 {
+                    buttonClickSound.Play();
                     nextScreen = "MainMenu"; //Remember to set the screen to game screen
                 }
                 else
@@ -52,13 +55,15 @@ namespace ChaosTriggerShatteredRealityMenus
                     nextScreen = "PauseMenu";
                 }
             }
-            /*else if(.CheckMouseCollision)
+            else if(exitButton.CheckMouseCollision(newState))
             {
-
-            }*/
+                buttonClickSound.Play();
+                nextScreen = "TitleScreen";
+            }
             else
             {
                 nextScreen = "PauseMenu";
+                exitButton.ResetFrame();
                 backButton.ResetFrame();
             }
         }
@@ -68,6 +73,7 @@ namespace ChaosTriggerShatteredRealityMenus
             spriteBatch.Begin(); //Draws banner and buttons
             spriteBatch.Draw(pauseBanner, new Rectangle(0, 0, 800, 200), new Rectangle(0, 0, 652, 253), Color.White);
             backButton.Draw(spriteBatch, Color.White);
+            exitButton.Draw(spriteBatch, Color.White);
             spriteBatch.End();
         }
         public override void SetDefaultScreen()
