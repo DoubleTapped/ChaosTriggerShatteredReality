@@ -17,12 +17,8 @@ namespace ChaosTriggerShatteredRealityMenus
         private SpriteFont font;
         private Texture2D titleSprite;
         private Texture2D BrenthesdaLogo;
+        private Texture2D cognitiveMediaBackground;
         private int waitTime;
-
-        public CognitiveMediaScreen()
-        {
-
-        }
 
         public override void Initialize()
         {
@@ -32,6 +28,7 @@ namespace ChaosTriggerShatteredRealityMenus
         public override void LoadContent(ContentManager Content)
         {
             font = Content.Load<SpriteFont>("Menu");
+            cognitiveMediaBackground = Content.Load<Texture2D>("introbackground");
             BrenthesdaLogo = Content.Load<Texture2D>("brenlogo");
             nextScreen = "cognitivemediaScreen";
         }
@@ -54,6 +51,7 @@ namespace ChaosTriggerShatteredRealityMenus
             spriteBatch.Begin();
             if(waitTime < 200)
             {
+                spriteBatch.Draw(cognitiveMediaBackground, new Rectangle(0, 0, 700, 700), Color.White);
                 spriteBatch.DrawString(font, "Cognitive Thought Media Presents...", new Vector2(200, 50), Color.Black);
             }
             else if(waitTime < 600)

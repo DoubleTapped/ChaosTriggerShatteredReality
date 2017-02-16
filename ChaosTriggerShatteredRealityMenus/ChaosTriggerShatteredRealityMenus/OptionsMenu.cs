@@ -22,16 +22,11 @@ namespace ChaosTriggerShatteredRealityMenus
         private ButtonCollision backButton;
         private ButtonCollision plusButton;
         private ButtonCollision minusButton;
+        public string previousScreen;
         private const int APP_COMMAND_MUTE = 0x80000;
         private const int APP_COMMAND_VOLUME_UP = 0xA0000;
         private const int APP_COMMAND_VOLUME_DOWN = 0x90000;
         private const int WM_APPCOMMAND = 0x319;
-
-
-        public OptionsMenu()
-        {
-
-        }
 
         public override void Initialize()
         {
@@ -40,6 +35,7 @@ namespace ChaosTriggerShatteredRealityMenus
 
         public override void LoadContent(ContentManager Content)
         {
+            base.LoadContent(Content);
             nextScreen = "OptionsMenu"; //Sets the current screen to options menu
             backButton = new ButtonCollision(Content, new Vector2(50, 400), "Back Button Highlight", 2, 14, 3); //Loads the back button
             plusButton = new ButtonCollision(Content, new Vector2(525, 300), "Plus Button", 2, 14, 3);
@@ -62,7 +58,8 @@ namespace ChaosTriggerShatteredRealityMenus
                 backButton.Update(2);
                 if(MouseButtonClicked())
                 {
-                    nextScreen = "MainMenu";
+                    buttonClickSound.Play();
+                    nextScreen = previousScreen;
                 }
                 else
                 {

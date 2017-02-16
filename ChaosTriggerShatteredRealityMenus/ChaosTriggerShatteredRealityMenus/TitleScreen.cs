@@ -16,12 +16,6 @@ namespace ChaosTriggerShatteredRealityMenus
     {
         private Texture2D titleSprite;
         private Texture2D titleScreenBackground;
-      
-
-        public TitleScreen()
-        {
-
-        }
 
         public override void Initialize()
         {

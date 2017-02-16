@@ -19,11 +19,6 @@ namespace ChaosTriggerShatteredRealityMenus
         private Texture2D loadMenuBanner;
         private Texture2D loadBackground;
 
-        public LoadMenu()
-        {
-
-        }
-
         public override void Initialize()
         {
             base.Initialize();
@@ -31,6 +26,7 @@ namespace ChaosTriggerShatteredRealityMenus
 
         public override void LoadContent(ContentManager Content)
         {
+            base.LoadContent(Content);
             font = Content.Load<SpriteFont>("Menu");
             nextScreen = "LoadMenu";
             loadButton = new ButtonCollision(Content, new Vector2(350, 250), "Load Sheet 2x14", 2, 14, 3);
@@ -55,6 +51,7 @@ namespace ChaosTriggerShatteredRealityMenus
                 newGameButton.Update(2);
                 if(MouseButtonClicked())
                 {
+                    buttonClickSound.Play();
                     nextScreen = "Gameplay";
                 }
                 else
@@ -67,7 +64,8 @@ namespace ChaosTriggerShatteredRealityMenus
                 loadButton.Update(2);
                 if(MouseButtonClicked())
                 {
-                    nextScreen = "MainMenu";
+                    buttonClickSound.Play();
+                    nextScreen = "Gameplay";
                 }
                 else
                 {
@@ -79,6 +77,7 @@ namespace ChaosTriggerShatteredRealityMenus
                 backButton.Update(2);
                 if(MouseButtonClicked())
                 {
+                    buttonClickSound.Play();
                     nextScreen = "MainMenu";
                 }
                 else
@@ -91,7 +90,8 @@ namespace ChaosTriggerShatteredRealityMenus
                 continueButton.Update(2);
                 if(MouseButtonClicked())
                 {
-                    nextScreen = "MainMenu";
+                    buttonClickSound.Play();
+                    nextScreen = "Gameplay";
                 }
                 else
                 {

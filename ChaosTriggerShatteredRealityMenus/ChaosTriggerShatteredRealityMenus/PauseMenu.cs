@@ -26,6 +26,8 @@ namespace ChaosTriggerShatteredRealityMenus
 
         public override void LoadContent(ContentManager Content)
         {
+            base.LoadContent(Content);
+            currentScreen = "PauseMenu";
             nextScreen = "PauseMenu"; //Sets the current screen to pause menu
             font = Content.Load<SpriteFont>("Menu");
             backButton = new ButtonCollision(Content, new Vector2(350, 350), "Back Button Highlight", 2, 14, 3);
@@ -60,9 +62,15 @@ namespace ChaosTriggerShatteredRealityMenus
                 buttonClickSound.Play();
                 nextScreen = "TitleScreen";
             }
+            else if (optionsButton.CheckMouseCollision(newState))
+            {
+                buttonClickSound.Play();
+                nextScreen = "OptionsMenu";
+            }
             else
             {
                 nextScreen = "PauseMenu";
+                optionsButton.ResetFrame();
                 exitButton.ResetFrame();
                 backButton.ResetFrame();
             }

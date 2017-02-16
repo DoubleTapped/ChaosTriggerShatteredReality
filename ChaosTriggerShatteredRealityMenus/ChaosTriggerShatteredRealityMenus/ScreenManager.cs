@@ -96,24 +96,23 @@ namespace ChaosTriggerShatteredRealityMenus
         /// <param name="gameTime"></param>
         protected override void Update(GameTime gameTime)
         {
+            
             previousScreen = currentScreen;
             string oldScreen = currentScreen.GetNextScreen();
             currentScreen.Update(gameTime);
             if(currentScreen.GetNextScreen() == "MainMenu")
             {
-                previousScreen = titleScreen;
+                optionsMenu.previousScreen = "MainMenu";
                 currentScreen = mainMenu;
             }
 
             else if(currentScreen.GetNextScreen() == "LoadMenu")
-            {
-                previousScreen = mainMenu;
+            {               
                 currentScreen = loadMenu;
             }
 
             else if(currentScreen.GetNextScreen() == "OptionsMenu")
             {
-                previousScreen = mainMenu;
                 currentScreen = optionsMenu;
             }
 
@@ -129,13 +128,12 @@ namespace ChaosTriggerShatteredRealityMenus
 
             else if(currentScreen.GetNextScreen() == "PauseMenu")
             {
-                previousScreen = gameplay;
+                optionsMenu.previousScreen = "PauseMenu";
                 currentScreen = pauseMenu;
             }
 
             else if(currentScreen.GetNextScreen() == "Gameplay")
             {
-                previousScreen = loadMenu;
                 currentScreen = gameplay;
             }
 
