@@ -14,10 +14,8 @@ namespace ChaosTriggerShatteredRealityMenus
 {
     class MainMenu : Screen
     {
-        private SpriteFont font;
         private ButtonCollision playButton;
         private ButtonCollision optionsButton;
-        private ButtonCollision backButton;
         private Texture2D mainMenuBanner;
         private Texture2D mainMenuBackground;
 

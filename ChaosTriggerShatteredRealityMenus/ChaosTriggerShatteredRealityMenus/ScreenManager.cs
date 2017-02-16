@@ -22,7 +22,6 @@ namespace ChaosTriggerShatteredRealityMenus
         public Song victoryMusic;
         private SpriteFont font;
         private int score = 0;
-        float bossMusicVolume = 0.0f;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Texture2D newHighlightSheet;
@@ -50,8 +49,7 @@ namespace ChaosTriggerShatteredRealityMenus
             titleScreen = new TitleScreen();
             creditsScreen = new CreditsScreen();
             cognitiveMediaScreen = new CognitiveMediaScreen();
-            pauseMenu = new PauseMenu();
-            
+            pauseMenu = new PauseMenu();          
         }
 
         protected override void Initialize()

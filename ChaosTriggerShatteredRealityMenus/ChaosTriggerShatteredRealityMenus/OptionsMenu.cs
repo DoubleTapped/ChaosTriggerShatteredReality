@@ -41,7 +41,7 @@ namespace ChaosTriggerShatteredRealityMenus
         public override void LoadContent(ContentManager Content)
         {
             nextScreen = "OptionsMenu"; //Sets the current screen to options menu
-            backButton = new ButtonCollision(Content, new Vector2(350, 350), "Back Button Highlight", 2, 14, 3); //Loads the back button
+            backButton = new ButtonCollision(Content, new Vector2(50, 400), "Back Button Highlight", 2, 14, 3); //Loads the back button
             plusButton = new ButtonCollision(Content, new Vector2(525, 300), "Plus Button", 2, 14, 3);
             minusButton = new ButtonCollision(Content, new Vector2(225, 300), "Minus Button", 2, 14, 3);
             font = Content.Load<SpriteFont>("Menu");
@@ -92,7 +92,7 @@ namespace ChaosTriggerShatteredRealityMenus
                 }
                 else
                 {
-                     nextScreen = "OptionsMenu";
+                    nextScreen = "OptionsMenu";
                 }
             }
 
@@ -110,7 +110,7 @@ namespace ChaosTriggerShatteredRealityMenus
             spriteBatch.Begin(); //Draws banner and buttons
             spriteBatch.Draw(optionsMenuBanner, new Rectangle(0, 0, 800, 200), new Rectangle(0, 0, 652, 253), Color.White);
             spriteBatch.Draw(optionsBackground, new Rectangle(0, 200, 800, 400), new Rectangle(0, 200, 800, 400), Color.White);
-            spriteBatch.DrawString(font, "Volume", new Vector2(352, 300), Color.Black);
+            spriteBatch.DrawString(font, "Volume", new Vector2(352, 300), Color.White);
             minusButton.Draw(spriteBatch, Color.White);
             plusButton.Draw(spriteBatch, Color.White);
             backButton.Draw(spriteBatch, Color.White);

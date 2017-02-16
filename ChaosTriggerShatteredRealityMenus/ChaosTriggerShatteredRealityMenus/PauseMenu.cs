@@ -36,7 +36,7 @@ namespace ChaosTriggerShatteredRealityMenus
         {
 
         }
-
+        
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);

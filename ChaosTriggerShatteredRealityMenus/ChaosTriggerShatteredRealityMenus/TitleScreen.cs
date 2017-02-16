@@ -14,10 +14,9 @@ namespace ChaosTriggerShatteredRealityMenus
 {
     class TitleScreen : Screen
     {
-        private SpriteFont font;
         private Texture2D titleSprite;
-        private ButtonCollision exitButton;
         private Texture2D titleScreenBackground;
+      
 
         public TitleScreen()
         {
@@ -31,6 +30,7 @@ namespace ChaosTriggerShatteredRealityMenus
 
         public override void LoadContent(ContentManager Content) //Loads title screen with sprites and buttons
         {
+            base.LoadContent(Content);
             nextScreen = "TitleScreen";
             font = Content.Load<SpriteFont>("Menu");
             titleSprite = Content.Load<Texture2D>("CTSR Title WIP");
@@ -56,6 +56,8 @@ namespace ChaosTriggerShatteredRealityMenus
                 exitButton.Update(2);
                 if(MouseButtonClicked())
                 {
+                    MediaPlayer.IsRepeating = false;
+                    MediaPlayer.Play(this.buttonClickSound);
                     Environment.Exit(0);
                 }
                 else //If previous conditions are not met, screen stays the same

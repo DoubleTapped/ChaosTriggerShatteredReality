@@ -16,10 +16,8 @@ namespace ChaosTriggerShatteredRealityMenus
     {
         private ButtonCollision loadButton;
         private ButtonCollision newGameButton;
-        private ButtonCollision continueButton;
-        private ButtonCollision backButton;
         private Texture2D loadMenuBanner;
-        private SpriteFont font;
+        private Texture2D loadBackground;
 
         public LoadMenu()
         {
@@ -40,6 +38,7 @@ namespace ChaosTriggerShatteredRealityMenus
             continueButton = new ButtonCollision(Content, new Vector2(350, 350), "Continue Highlight Sheet", 4, 7, 3);
             backButton = new ButtonCollision(Content, new Vector2(350, 400), "Back Button Highlight", 2, 14, 3);
             loadMenuBanner = Content.Load<Texture2D>("banner_gm");
+            loadBackground = Content.Load<Texture2D>("Amrored Turtle");
         }
 
         public override void UnloadContent()
@@ -118,6 +117,7 @@ namespace ChaosTriggerShatteredRealityMenus
             continueButton.Draw(spriteBatch, Color.White);
             backButton.Draw(spriteBatch, Color.White);
             spriteBatch.Draw(loadMenuBanner, new Rectangle(0, 0, 800, 200), new Rectangle(0, 0, 652, 253), Color.White);
+            spriteBatch.Draw(loadBackground, new Rectangle(100, 200, 112, 82), new Rectangle(100, 200, 224, 164), Color.White);
             spriteBatch.End();
         }
         public override void SetDefaultScreen()

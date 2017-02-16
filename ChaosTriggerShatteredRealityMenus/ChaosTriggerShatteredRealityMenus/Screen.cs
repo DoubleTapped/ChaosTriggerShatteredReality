@@ -9,17 +9,23 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using System.Diagnostics;
 
 namespace ChaosTriggerShatteredRealityMenus
 {
     class Screen
     {
-        private SpriteFont font;
         private MouseState oldState;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         protected MouseState newState;
         protected string nextScreen;
+        protected ButtonCollision exitButton;
+        protected ButtonCollision backButton;
+        protected ButtonCollision continueButton;
+        protected ButtonCollision optionsButton;
+        protected SpriteFont font;
+        public Song buttonClickSound;
 
         public Screen()
         {
@@ -28,12 +34,13 @@ namespace ChaosTriggerShatteredRealityMenus
 
         public virtual void Initialize()
         {
-            //test
+            
         }
 
         public virtual void LoadContent(ContentManager Content)
         {
-
+            buttonClickSound = Content.Load<Song>("ButtonClick");
+            Debug.WriteLine("Test");
         }
 
         public virtual void UnloadContent()
