@@ -57,7 +57,7 @@ namespace ChaosTriggerShatteredRealityMenus
                 if(MouseButtonClicked())
                 {
                     MediaPlayer.IsRepeating = false;
-                    MediaPlayer.Play(this.buttonClickSound);
+                    buttonClickSound.Play();
                     Environment.Exit(0);
                 }
                 else //If previous conditions are not met, screen stays the same

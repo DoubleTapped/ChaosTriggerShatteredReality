@@ -25,7 +25,7 @@ namespace ChaosTriggerShatteredRealityMenus
         protected ButtonCollision continueButton;
         protected ButtonCollision optionsButton;
         protected SpriteFont font;
-        public Song buttonClickSound;
+        public SoundEffect buttonClickSound;
 
         public Screen()
         {
@@ -39,7 +39,7 @@ namespace ChaosTriggerShatteredRealityMenus
 
         public virtual void LoadContent(ContentManager Content)
         {
-            buttonClickSound = Content.Load<Song>("ButtonClick");
+            buttonClickSound = Content.Load<SoundEffect>("ButtonClick");
             Debug.WriteLine("Test");
         }
 
