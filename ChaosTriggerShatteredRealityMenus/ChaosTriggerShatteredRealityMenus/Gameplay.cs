@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ChaosTriggerShatteredRealityMenus
 {
-    class Gameplay
+    class Gameplay : Screen
     {
 
     }
