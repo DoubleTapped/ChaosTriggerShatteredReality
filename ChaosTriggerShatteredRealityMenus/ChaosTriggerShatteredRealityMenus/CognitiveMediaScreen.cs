@@ -51,19 +51,20 @@ namespace ChaosTriggerShatteredRealityMenus
             spriteBatch.Begin();
             if(waitTime < 200)
             {
-                spriteBatch.Draw(cognitiveMediaBackground, new Rectangle(0, 0, 700, 700), Color.White);
-                spriteBatch.DrawString(font, "Cognitive Thought Media Presents...", new Vector2(200, 50), Color.Black);
+                spriteBatch.Draw(cognitiveMediaBackground, new Rectangle(0, 0, 800, 700), Color.White);
+                spriteBatch.DrawString(font, "Cognitive Thought Media Presents...", new Vector2(200, 50), Color.DarkCyan);
             }
             else if(waitTime < 600)
             {
-                spriteBatch.DrawString(font, "A Brenthesda Production...", new Vector2(200, 50), Color.Black);
-                spriteBatch.DrawString(font, "Programmers:", new Vector2(200, 100), Color.Black);
-                spriteBatch.DrawString(font, "Cameron Abrams", new Vector2(200, 150), Color.Black);
-                spriteBatch.DrawString(font, "Cameron Pohl", new Vector2(200, 200), Color.Black);
-                spriteBatch.DrawString(font, "Visual Designers:", new Vector2(200, 300), Color.Black);
-                spriteBatch.DrawString(font, "Colin Holmes", new Vector2(200, 350), Color.Black);
-                spriteBatch.DrawString(font, "Tristan Streeter", new Vector2(200, 400), Color.Black);
-                spriteBatch.Draw(BrenthesdaLogo, new Rectangle(0, 150, 200, 200), new Rectangle(0, 0, 700, 700), Color.White);
+                spriteBatch.Draw(cognitiveMediaBackground, new Rectangle(0, 0, 800, 700), Color.White);
+                spriteBatch.DrawString(font, "A Brenthesda Production...", new Vector2(200, 50), Color.DarkCyan);
+                spriteBatch.DrawString(font, "Programmers:", new Vector2(100, 100), Color.DarkCyan);
+                spriteBatch.DrawString(font, "Cameron Abrams", new Vector2(100, 150), Color.Cyan);
+                spriteBatch.DrawString(font, "Cameron Pohl", new Vector2(100, 200), Color.Cyan);
+                spriteBatch.DrawString(font, "Visual Designers:", new Vector2(100, 300), Color.DarkCyan);
+                spriteBatch.DrawString(font, "Colin Holmes", new Vector2(100, 350), Color.Cyan);
+                spriteBatch.DrawString(font, "Tristan Streeter", new Vector2(100, 400), Color.Cyan);
+                spriteBatch.Draw(BrenthesdaLogo, new Rectangle(600, 25, 200, 200), new Rectangle(0, 0, 700, 700), Color.White);
             }
             else
             {

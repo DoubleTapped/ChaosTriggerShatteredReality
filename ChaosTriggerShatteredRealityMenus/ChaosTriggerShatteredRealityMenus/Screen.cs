@@ -15,7 +15,7 @@ namespace ChaosTriggerShatteredRealityMenus
 {
     class Screen
     {
-        private MouseState oldState;
+        private bool oldState;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         protected MouseState newState;
@@ -30,7 +30,7 @@ namespace ChaosTriggerShatteredRealityMenus
 
         public Screen()
         {
-
+            oldState = true;
         }
 
         public virtual void Initialize()
@@ -71,12 +71,12 @@ namespace ChaosTriggerShatteredRealityMenus
 
         public bool MouseButtonClicked()
         {
-            if (newState.LeftButton == ButtonState.Pressed && oldState.LeftButton == ButtonState.Released)
+            if (newState.LeftButton == ButtonState.Pressed && !oldState)
             {
-                oldState = newState;
+                oldState = true;
                 return true;
             }
-            oldState = newState;
+            oldState = (newState.LeftButton == ButtonState.Pressed);
             return false;
         }     
     }
