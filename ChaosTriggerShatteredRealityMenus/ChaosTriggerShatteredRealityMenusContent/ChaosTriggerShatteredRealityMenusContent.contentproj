@@ -285,6 +285,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+
     <Compile Include="SwordBackground.png">
       <Name>SwordBackground</Name>
       <Importer>TextureImporter</Importer>
