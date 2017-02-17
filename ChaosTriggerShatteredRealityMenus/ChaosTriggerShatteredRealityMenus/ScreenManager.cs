@@ -31,7 +31,6 @@ namespace ChaosTriggerShatteredRealityMenus
         Screen previousScreen;
         OptionsMenu optionsMenu;
         TitleScreen titleScreen;
-        CreditsScreen creditsScreen;
         CognitiveMediaScreen cognitiveMediaScreen;
         PauseMenu pauseMenu;
         Gameplay gameplay;
@@ -48,7 +47,6 @@ namespace ChaosTriggerShatteredRealityMenus
             loadMenu = new LoadMenu();
             optionsMenu = new OptionsMenu();
             titleScreen = new TitleScreen();
-            creditsScreen = new CreditsScreen();
             cognitiveMediaScreen = new CognitiveMediaScreen();
             pauseMenu = new PauseMenu();
             gameplay = new Gameplay();    
@@ -68,7 +66,6 @@ namespace ChaosTriggerShatteredRealityMenus
             loadMenu.LoadContent(Content);
             optionsMenu.LoadContent(Content);
             titleScreen.LoadContent(Content);
-            creditsScreen.LoadContent(Content);
             cognitiveMediaScreen.LoadContent(Content);
             pauseMenu.LoadContent(Content);
             gameplay.LoadContent(Content);
@@ -94,12 +91,11 @@ namespace ChaosTriggerShatteredRealityMenus
         /// Updates location of mouse and checks for button collision (then updates the screen if button collsion and click is detected)
         /// </summary>
         /// <param name="gameTime"></param>
-        protected override void Update(GameTime gameTime)
-        {
-            
+        protected virtual void Update(GameTime gameTime, GraphicsDevice graphicsDevice)
+        {        
             previousScreen = currentScreen;
             string oldScreen = currentScreen.GetNextScreen();
-            currentScreen.Update(gameTime);
+            currentScreen.Update(gameTime, graphicsDevice);
             if(currentScreen.GetNextScreen() == "MainMenu")
             {
                 optionsMenu.previousScreen = "MainMenu";
@@ -121,9 +117,9 @@ namespace ChaosTriggerShatteredRealityMenus
                 currentScreen = titleScreen;
             }
 
-            else if(currentScreen.GetNextScreen() == "CognitiveMediaScreen")
+            else if(currentScreen.GetNextScreen() == "cognitiveMediaScreen")
             {
-                currentScreen = creditsScreen;
+                currentScreen = cognitiveMediaScreen;
             }
 
             else if(currentScreen.GetNextScreen() == "PauseMenu")

@@ -37,9 +37,9 @@ namespace ChaosTriggerShatteredRealityMenus
             
         }
 
-        public override void Update(GameTime gameTime) //Checks for either the enter key to be pressed or the Exit button to be clicked
+        public override void Update(GameTime gameTime, GraphicsDevice graphicsDevice) //Checks for either the enter key to be pressed or the Exit button to be clicked
         {
-            base.Update(gameTime);
+            base.Update(gameTime, graphicsDevice);
             KeyboardState state = Keyboard.GetState();
             if(state.IsKeyDown(Keys.Enter))
             {

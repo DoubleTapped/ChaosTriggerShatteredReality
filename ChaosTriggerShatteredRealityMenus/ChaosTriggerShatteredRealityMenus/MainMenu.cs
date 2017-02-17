@@ -44,9 +44,9 @@ namespace ChaosTriggerShatteredRealityMenus
         /// Updates screen if mouse collision is detected and mouse button clicked
         /// </summary>
         /// <param name="gameTime"></param>
-        public override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime, GraphicsDevice graphicsDevice)
         {
-            base.Update(gameTime);
+            base.Update(gameTime, graphicsDevice);
 
             if(playButton.CheckMouseCollision(newState))
             {

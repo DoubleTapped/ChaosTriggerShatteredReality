@@ -68,7 +68,6 @@
     <Compile Include="CrashHandler.Designer.cs">
       <DependentUpon>CrashHandler.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreditsScreen.cs" />
     <Compile Include="Gameplay.cs" />
     <Compile Include="LoadMenu.cs" />
     <Compile Include="MainMenu.cs" />

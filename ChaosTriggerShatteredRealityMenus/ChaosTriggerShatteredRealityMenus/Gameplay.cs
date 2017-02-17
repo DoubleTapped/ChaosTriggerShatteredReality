@@ -88,7 +88,7 @@ namespace ChaosTriggerShatteredRealityMenus
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected virtual void Update(GameTime gameTime)
+        protected virtual void Update(GameTime gameTime, GraphicsDevice graphicsDevice)
         {
             Vector2 oldPosition = startingPoint;
             // Allows the game to exit
@@ -160,7 +160,7 @@ namespace ChaosTriggerShatteredRealityMenus
                 startingPoint = oldPosition;
             }
 
-            base.Update(gameTime);
+            base.Update(gameTime, graphicsDevice);
         }
 
         /// <summary>

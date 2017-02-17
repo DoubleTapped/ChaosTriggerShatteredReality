@@ -41,9 +41,9 @@ namespace ChaosTriggerShatteredRealityMenus
 
         }
         
-        public override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime, GraphicsDevice graphicsDevice)
         {
-            base.Update(gameTime);
+            base.Update(gameTime, graphicsDevice);
             if(backButton.CheckMouseCollision(newState))
             {
                 backButton.Update(2);

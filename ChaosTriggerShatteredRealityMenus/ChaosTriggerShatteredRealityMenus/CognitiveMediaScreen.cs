@@ -18,7 +18,7 @@ namespace ChaosTriggerShatteredRealityMenus
         private Texture2D titleSprite;
         private Texture2D BrenthesdaLogo;
         private Texture2D cognitiveMediaBackground;
-        private int waitTime;
+        private int waitTime = 0;
 
         public override void Initialize()
         {
@@ -38,9 +38,9 @@ namespace ChaosTriggerShatteredRealityMenus
 
         }
 
-        public override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime, GraphicsDevice graphicsDevice)
         {
-            if(waitTime <= 600)
+            if (waitTime <= 600)
             {
                 waitTime++;
             }

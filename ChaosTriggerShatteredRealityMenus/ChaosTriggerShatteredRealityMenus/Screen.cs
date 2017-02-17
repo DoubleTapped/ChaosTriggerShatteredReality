@@ -50,7 +50,7 @@ namespace ChaosTriggerShatteredRealityMenus
             
         }
 
-        public virtual void Update(GameTime gameTime)
+        public virtual void Update(GameTime gameTime, GraphicsDevice graphicsDevice)
         {
             newState = Mouse.GetState(); //Gets location of the mouse to see if it's colliding with buttons
         }
