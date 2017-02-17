@@ -72,7 +72,9 @@
     <Compile Include="Gameplay.cs" />
     <Compile Include="LoadMenu.cs" />
     <Compile Include="MainMenu.cs" />
+    <Compile Include="pastPlayerAnimationControll.cs" />
     <Compile Include="PauseMenu.cs" />
+    <Compile Include="presentPlayerAnimationControll.cs" />
     <Compile Include="Screen.cs" />
     <Compile Include="OptionsMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
