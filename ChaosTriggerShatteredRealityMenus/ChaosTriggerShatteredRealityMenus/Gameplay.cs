@@ -58,7 +58,7 @@ namespace ChaosTriggerShatteredRealityMenus
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
         /// </summary>
-        protected virtual void LoadContent(ContentManager Content)
+        public override void LoadContent(ContentManager Content)
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(graphics);
@@ -88,7 +88,7 @@ namespace ChaosTriggerShatteredRealityMenus
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected virtual void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             Vector2 oldPosition = startingPoint;
             // Allows the game to exit
@@ -167,7 +167,7 @@ namespace ChaosTriggerShatteredRealityMenus
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected virtual void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             graphics.Clear(Color.CornflowerBlue);
 
