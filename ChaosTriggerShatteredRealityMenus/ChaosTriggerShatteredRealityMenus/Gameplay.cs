@@ -61,7 +61,7 @@ namespace ChaosTriggerShatteredRealityMenus
         public override void LoadContent(ContentManager Content)
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(graphics);
+            //spriteBatch = new SpriteBatch(graphics);
 
             // TODO: use this.Content to load your game content here
             atkAnimation1 = Content.Load<Texture2D>("Sword");
