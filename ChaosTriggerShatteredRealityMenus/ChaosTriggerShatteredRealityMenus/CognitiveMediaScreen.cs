@@ -40,7 +40,7 @@ namespace ChaosTriggerShatteredRealityMenus
 
         public override void Update(GameTime gameTime, GraphicsDevice graphicsDevice)
         {
-            while(waitTime <= 600)
+            if(waitTime <= 600)
             {
                 waitTime++;
             }

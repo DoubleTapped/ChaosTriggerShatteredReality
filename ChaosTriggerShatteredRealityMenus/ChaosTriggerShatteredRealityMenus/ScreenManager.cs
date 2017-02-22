@@ -117,7 +117,7 @@ namespace ChaosTriggerShatteredRealityMenus
                 currentScreen = titleScreen;
             }
 
-            else if(currentScreen.GetNextScreen() == "cognitiveMediaScreen")
+            else if(currentScreen.GetNextScreen() == "cognitivemediaScreen")
             {
                 currentScreen = cognitiveMediaScreen;
             }
