@@ -91,11 +91,11 @@ namespace ChaosTriggerShatteredRealityMenus
         /// Updates location of mouse and checks for button collision (then updates the screen if button collsion and click is detected)
         /// </summary>
         /// <param name="gameTime"></param>
-        protected virtual void Update(GameTime gameTime, GraphicsDevice graphicsDevice)
+        protected override void Update(GameTime gameTime)
         {        
             previousScreen = currentScreen;
             string oldScreen = currentScreen.GetNextScreen();
-            currentScreen.Update(gameTime, graphicsDevice);
+            currentScreen.Update(gameTime, GraphicsDevice);
             if(currentScreen.GetNextScreen() == "MainMenu")
             {
                 optionsMenu.previousScreen = "MainMenu";
