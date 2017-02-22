@@ -26,6 +26,47 @@ namespace ChaosTriggerShatteredRealityMenus
         Texture2D jumpingRight;
         Texture2D jumpingLeft;
 
+        Texture2D brokenFireRight;
+        Texture2D brokenFireLeft;
+        Texture2D brokenJumpLeft;
+        Texture2D brokenJumpRight;
+        Texture2D brokenWalkLeft;
+        Texture2D brokenWalkRight;
+
+        Texture2D robotBlasterBullet;
+        Texture2D robotFireLeft;
+        Texture2D robotFireRight;
+        Texture2D robotJumpLeft;
+        Texture2D robotJumpRight;
+        Texture2D robotWalkLeft;
+        Texture2D robotWalkRight;
+        Texture2D robot;
+
+        Texture2D fShadowAttackLeft;
+        Texture2D fShadowAttackRight;
+        Texture2D fShadowJump;
+        Texture2D fShadowWalkLeft;
+        Texture2D fShadowWalkRight;
+
+        Texture2D pShadowAttackLeft;
+        Texture2D pShadowAttackRight;
+        Texture2D pShadowJump;
+        Texture2D pShadowWalkLeft;
+        Texture2D pShadowWalkRight;
+
+        Texture2D presentShadowAttackLeft;
+        Texture2D presentShadowAttackRight;
+        Texture2D presentShadowJump;
+        Texture2D presentShadowWalkLeft;
+        Texture2D presentShadowWalkRight;
+
+        Texture2D skull1Left;
+        Texture2D skull2Left;
+        Texture2D skull1Right;
+        Texture2D skull2Right;
+        Texture2D skullProjectileLeft;
+        Texture2D skullProjecctileRight;
+
         Vector2 startingPoint = new Vector2(200, 200);
 
 
