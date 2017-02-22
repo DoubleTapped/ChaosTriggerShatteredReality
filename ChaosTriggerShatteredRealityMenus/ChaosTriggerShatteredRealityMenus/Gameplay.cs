@@ -29,6 +29,47 @@ namespace ChaosTriggerShatteredRealityMenus
         Texture2D BackGroundPresent;
         Rectangle backGround = new Rectangle(0, -120, 1600, 600);
 
+        Texture2D brokenFireRight;
+        Texture2D brokenFireLeft;
+        Texture2D brokenJumpLeft;
+        Texture2D brokenJumpRight;
+        Texture2D brokenWalkLeft;
+        Texture2D brokenWalkRight;
+
+        Texture2D robotBlasterBullet;
+        Texture2D robotFireLeft;
+        Texture2D robotFireRight;
+        Texture2D robotJumpLeft;
+        Texture2D robotJumpRight;
+        Texture2D robotWalkLeft;
+        Texture2D robotWalkRight;
+        Texture2D robot;
+
+        Texture2D fShadowAttackLeft;
+        Texture2D fShadowAttackRight;
+        Texture2D fShadowJump;
+        Texture2D fShadowWalkLeft;
+        Texture2D fShadowWalkRight;
+
+        Texture2D pShadowAttackLeft;
+        Texture2D pShadowAttackRight;
+        Texture2D pShadowJump;
+        Texture2D pShadowWalkLeft;
+        Texture2D pShadowWalkRight;
+
+        Texture2D presentShadowAttackLeft;
+        Texture2D presentShadowAttackRight;
+        Texture2D presentShadowJump;
+        Texture2D presentShadowWalkLeft;
+        Texture2D presentShadowWalkRight;
+
+        Texture2D skull1Left;
+        Texture2D skull2Left;
+        Texture2D skull1Right;
+        Texture2D skull2Right;
+        Texture2D skullProjectileLeft;
+        Texture2D skullProjecctileRight;
+
         Vector2 startingPoint = new Vector2(200, 200);
 
 
@@ -80,8 +121,8 @@ namespace ChaosTriggerShatteredRealityMenus
             walkRightAnimation = Content.Load<Texture2D>("present walking right");
             walkLeftAnimation = Content.Load<Texture2D>("present walking left");
             atkAnimation2 = Content.Load<Texture2D>("present slash left");
-            jumpingRight = Content.Load<Texture2D>("present jump right");
-            jumpingLeft = Content.Load<Texture2D>("present jump left");
+            jumpingRight = Content.Load<Texture2D>("presentjumpright");
+            jumpingLeft = Content.Load<Texture2D>("presentjumpleft");
 
             player = new presentPlayerAnimationControll(atkAnimation1, 1, 2, walkRightAnimation, 1, 3, walkLeftAnimation, 1, 3, atkAnimation2, 1, 2, jumpingRight, 1, 1, jumpingLeft, 1, 1);
             playerSpriteBounds = new Rectangle((int)startingPoint.X, (int)startingPoint.Y, player.TextureCur.Width / player.curTextureColumns, player.TextureCur.Height / player.curTextureRows);
@@ -191,7 +232,10 @@ namespace ChaosTriggerShatteredRealityMenus
             {
                 startingPoint = oldPosition;
             }*/
-
+            if (startingPoint.Y < 600)
+            {
+                startingPoint.Y += 4;
+            }
             base.Update(gameTime, graphicsDevice);
         }
 

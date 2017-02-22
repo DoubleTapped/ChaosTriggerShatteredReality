@@ -34,6 +34,7 @@ namespace ChaosTriggerShatteredRealityMenus
             backButton = new ButtonCollision(Content, new Vector2(350, 350), "Back Button Highlight", 2, 14, 3);
             armoredTurtle = Content.Load<Texture2D>("Amrored Turtle");
             mainMenuBanner = Content.Load<Texture2D>("banner_mm");
+            mainMenuBackground = Content.Load<Texture2D>("introbackground");
         }
 
         public override void UnloadContent()
@@ -101,6 +102,7 @@ namespace ChaosTriggerShatteredRealityMenus
             spriteBatch.Begin();
             spriteBatch.Draw(armoredTurtle, new Rectangle(0, 400, 97, 91), new Rectangle(0, 400, 287, 273), Color.White);
             spriteBatch.Draw(mainMenuBanner, new Rectangle(0, 0, 800, 200), new Rectangle(0, 0, 652, 253), Color.White);
+            spriteBatch.Draw(mainMenuBackground, new Rectangle(0, 0, 700, 700), new Rectangle(0, 300, 700, 700), Color.White);
             playButton.Draw(spriteBatch, Color.White);
             backButton.Draw(spriteBatch, Color.White);
             optionsButton.Draw(spriteBatch, Color.White);
