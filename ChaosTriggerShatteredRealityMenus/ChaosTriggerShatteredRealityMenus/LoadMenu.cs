@@ -18,6 +18,7 @@ namespace ChaosTriggerShatteredRealityMenus
         private ButtonCollision newGameButton;
         private Texture2D loadMenuBanner;
         private Texture2D loadBackground;
+        private Texture2D loadMenuBackground;
 
         public override void Initialize()
         {
@@ -34,7 +35,8 @@ namespace ChaosTriggerShatteredRealityMenus
             continueButton = new ButtonCollision(Content, new Vector2(350, 350), "Continue Highlight Sheet", 4, 7, 3);
             backButton = new ButtonCollision(Content, new Vector2(350, 400), "Back Button Highlight", 2, 14, 3);
             loadMenuBanner = Content.Load<Texture2D>("banner_gm");
-            loadBackground = Content.Load<Texture2D>("Amrored Turtle");
+            loadBackground = Content.Load<Texture2D>("introbackground");
+            loadMenuBackground = Content.Load<Texture2D>("SwordBackground");
         }
 
         public override void UnloadContent()
@@ -111,13 +113,14 @@ namespace ChaosTriggerShatteredRealityMenus
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
-            spriteBatch.DrawString(font, "Welcome to CHAOS_TRIGG3R: SHATT3R3D R3ALTIY", new Vector2(150, 50), Color.Black);
+            spriteBatch.Draw(loadBackground, new Rectangle(0, 0, 800, 700), new Rectangle(0, 0, 800, 700), Color.White);
+            spriteBatch.Draw(loadBackground, new Rectangle(100, 200, 112, 82), new Rectangle(100, 200, 224, 164), Color.White);
+            spriteBatch.Draw(loadMenuBackground, new Rectangle(0, -100, 800, 700), Color.White);
+            spriteBatch.Draw(loadMenuBanner, new Rectangle(0, 0, 800, 200), new Rectangle(0, 0, 652, 253), Color.White);
             loadButton.Draw(spriteBatch, Color.White);
             newGameButton.Draw(spriteBatch, Color.White);
             continueButton.Draw(spriteBatch, Color.White);
             backButton.Draw(spriteBatch, Color.White);
-            spriteBatch.Draw(loadMenuBanner, new Rectangle(0, 0, 800, 200), new Rectangle(0, 0, 652, 253), Color.White);
-            spriteBatch.Draw(loadBackground, new Rectangle(100, 200, 112, 82), new Rectangle(100, 200, 224, 164), Color.White);
             spriteBatch.End();
         }
         public override void SetDefaultScreen()

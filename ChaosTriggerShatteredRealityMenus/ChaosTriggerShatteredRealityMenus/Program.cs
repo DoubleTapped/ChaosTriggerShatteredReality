@@ -11,21 +11,20 @@ namespace ChaosTriggerShatteredRealityMenus
         {
             using (ScreenManager game = new ScreenManager())
             {
-                //try
-                //{
+                try
+                {
                     game.Run();
-                //}
-                /*catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     using (CrashHandler crashHandler = new CrashHandler(ex.Message, ex.StackTrace))
-                    {
-                 
+                    {                
                         if(crashHandler.ShowDialog() == DialogResult.OK)
                         {
                             Console.WriteLine("Exception thrown: " + ex);
                         }
                     }
-                }*/
+                }
             }
         }
     }

@@ -100,9 +100,9 @@ namespace ChaosTriggerShatteredRealityMenus
         public override void Draw(SpriteBatch spriteBatch) //Draws buttons and backgrounds on screen
         {
             spriteBatch.Begin();
-            spriteBatch.Draw(armoredTurtle, new Rectangle(0, 400, 97, 91), new Rectangle(0, 400, 287, 273), Color.White);
+            spriteBatch.Draw(mainMenuBackground, new Rectangle(0, 0, 800, 700), new Rectangle(0, 0, 800, 700), Color.White);
             spriteBatch.Draw(mainMenuBanner, new Rectangle(0, 0, 800, 200), new Rectangle(0, 0, 652, 253), Color.White);
-            spriteBatch.Draw(mainMenuBackground, new Rectangle(0, 0, 700, 700), new Rectangle(0, 300, 700, 700), Color.White);
+            spriteBatch.Draw(armoredTurtle, new Rectangle(0, 400, 97, 91), new Rectangle(0, 400, 287, 273), Color.White);
             playButton.Draw(spriteBatch, Color.White);
             backButton.Draw(spriteBatch, Color.White);
             optionsButton.Draw(spriteBatch, Color.White);

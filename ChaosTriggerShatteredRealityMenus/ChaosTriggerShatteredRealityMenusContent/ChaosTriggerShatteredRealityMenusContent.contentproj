@@ -292,15 +292,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="presentjumpleft.png">
-      <Name>presentjumpleft</Name>
+    <Compile Include="present jump left.png">
+      <Name>present jump left</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="presentjumpright.png">
-      <Name>presentjumpright</Name>
+    <Compile Include="present jump right.png">
+      <Name>present jump right</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -328,8 +328,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="boken fire right.png">
-      <Name>boken fire right</Name>
+    <Compile Include="bokenfireright.png">
+      <Name>bokenfireright</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -364,8 +364,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="blaster bullet.png">
-      <Name>blaster bullet</Name>
+    <Compile Include="blasterbullet.png">
+      <Name>blasterbullet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -487,23 +487,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CursedSkull1left.png">
-      <Name>CursedSkull1left</Name>
+    <Compile Include="CursedSkulloneleft.png">
+      <Name>CursedSkulloneleft</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="CursedSkull1right.png">
-      <Name>CursedSkull1right</Name>
+    <Compile Include="CursedSkulloneright.png">
+      <Name>CursedSkulloneright</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="CursedSkull2left.png">
-      <Name>CursedSkull2left</Name>
+    <Compile Include="CursedSkulltwoleft.png">
+      <Name>CursedSkulltwoleft</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="CursedSkull2right.png">
-      <Name>CursedSkull2right</Name>
+    <Compile Include="CursedSkulltworight.png">
+      <Name>CursedSkulltworight</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
