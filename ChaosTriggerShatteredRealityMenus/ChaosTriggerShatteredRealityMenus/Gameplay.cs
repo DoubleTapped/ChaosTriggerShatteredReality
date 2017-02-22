@@ -26,6 +26,9 @@ namespace ChaosTriggerShatteredRealityMenus
         Texture2D jumpingRight;
         Texture2D jumpingLeft;
 
+        Texture2D BackGroundPresent;
+        Rectangle backGround = new Rectangle(0, -120, 1600, 600);
+
         Vector2 startingPoint = new Vector2(200, 200);
 
 
@@ -71,6 +74,8 @@ namespace ChaosTriggerShatteredRealityMenus
             //spriteBatch = new SpriteBatch(graphics);
 
             // TODO: use this.Content to load your game content here
+            BackGroundPresent = Content.Load<Texture2D>("Present Map Layout");
+
             atkAnimation1 = Content.Load<Texture2D>("present slash right");
             walkRightAnimation = Content.Load<Texture2D>("present walking right");
             walkLeftAnimation = Content.Load<Texture2D>("present walking left");
@@ -111,8 +116,12 @@ namespace ChaosTriggerShatteredRealityMenus
                 facingRight = false;
                 facingLeft = true;
                 player.ChangeCurrentTexture(isRightKeyDown, isLeftKeyDown, isAtkKeyDown, jumpKeyDown, facingRight, facingLeft);
-                startingPoint.X -= 4;
+                startingPoint.X -= 2;
                 player.Update();
+                if (backGround.X <= 800)
+                {
+                    backGround.X += 4;
+                }
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
@@ -123,8 +132,12 @@ namespace ChaosTriggerShatteredRealityMenus
                 facingRight = true;
                 facingLeft = false;
                 player.ChangeCurrentTexture(isRightKeyDown, isLeftKeyDown, isAtkKeyDown, jumpKeyDown, facingRight, facingLeft);
-                startingPoint.X += 4;
+                startingPoint.X += 2;
                 player.Update();
+                if (backGround.X >= -800)
+                {
+                    backGround.X -= 4;
+                }
             }
 
             else if (Keyboard.GetState().IsKeyDown(Keys.Up))
@@ -135,13 +148,13 @@ namespace ChaosTriggerShatteredRealityMenus
                 jumpKeyDown = true;
 
                 player.ChangeCurrentTexture(isRightKeyDown, isLeftKeyDown, isAtkKeyDown, jumpKeyDown, facingRight, facingLeft);
-                startingPoint.Y -= 4;
+                startingPoint.Y -= 2;
                 player.Update();
             }
 
             else if (Keyboard.GetState().IsKeyDown(Keys.Down))
             {
-                startingPoint.Y += 4;
+                startingPoint.Y += 2;
             }
 
             else if (Keyboard.GetState().IsKeyDown(Keys.Space))
@@ -191,6 +204,14 @@ namespace ChaosTriggerShatteredRealityMenus
             //graphics.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            
+
+            spriteBatch.Begin();
+
+            spriteBatch.Draw(BackGroundPresent, backGround, Color.White);
+
+            spriteBatch.End();
+
             player.Draw(spriteBatch, startingPoint);
 
             base.Draw(spriteBatch);
