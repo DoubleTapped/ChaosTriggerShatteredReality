@@ -27,8 +27,44 @@ namespace ChaosTriggerShatteredRealityMenus
             CursedSkullLeft2 = cursedSkullLeft2;
             CursedSkullFlameLeft = cursedSkullFlameLeft;
 
-            TextureCur = CursedSkullLeft1;
+            TextureCur = CursedSkullRight1;
         }
 
+        public void ChangeCurrentTexture(int timer, int timer2, bool facingRight, bool facingLeft)
+        {
+            if (timer == 8)
+            {
+                if (facingRight == true && facingLeft == false)
+                {
+                    TextureCur = CursedSkullRight2;
+                }
+                else if (facingLeft == true && facingRight == false)
+                {
+                    TextureCur = CursedSkullLeft2;
+                }
+
+                if (timer2 == 4)
+                {
+                    if (facingRight == true && facingLeft == false)
+                    {
+                        TextureCur = CursedSkullFlameRight;
+                    }
+                    else if (facingLeft == true && facingRight == false)
+                    {
+                        ;
+                    }
+                }
+            }
+            else{
+                if (facingRight == true && facingLeft == false)
+                {
+                    TextureCur = CursedSkullRight1;
+                }
+                else if (facingLeft == true && facingRight == false)
+                {
+                    TextureCur = CursedSkullLeft1;
+                }
+            }
+        }
     }
 }

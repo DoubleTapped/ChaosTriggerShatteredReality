@@ -23,14 +23,21 @@ namespace ChaosTriggerShatteredRealityMenus
         Texture2D walkRightAnimation;
         Texture2D walkLeftAnimation;
         Texture2D atkAnimation2;
+        Texture2D jumpingRight;
+        Texture2D jumpingLeft;
 
         Vector2 startingPoint = new Vector2(200, 200);
+
+
+        Vector2 Flame1Position = new Vector2(-500, -500);
+        Vector2 Flame2Position = new Vector2(-500, -500);
 
         bool isRightKeyDown;
         bool isLeftKeyDown;
         bool isAtkKeyDown;
         bool facingLeft;
         bool facingRight;
+        bool jumpKeyDown;
 
         public Rectangle playerSpriteBounds;
         public Rectangle enemySpriteBounds;
@@ -68,8 +75,10 @@ namespace ChaosTriggerShatteredRealityMenus
             walkRightAnimation = Content.Load<Texture2D>("Walking");
             walkLeftAnimation = Content.Load<Texture2D>("Walking2");
             atkAnimation2 = Content.Load<Texture2D>("sword2");
+            jumpingRight = Content.Load<Texture2D>("");
+            jumpingLeft = Content.Load<Texture2D>("");
 
-            pastPlayerAnimationControll = new pastPlayerAnimationControll(atkAnimation1, 1, 2, walkRightAnimation, 1, 3, walkLeftAnimation, 1, 3, atkAnimation2, 1, 2);
+            pastPlayerAnimationControll = new pastPlayerAnimationControll(atkAnimation1, 1, 2, walkRightAnimation, 1, 3, walkLeftAnimation, 1, 3, atkAnimation2, 1, 2, );
             playerSpriteBounds = new Rectangle((int)startingPoint.X, (int)startingPoint.Y, pastPlayerAnimationControll.TextureCur.Width / pastPlayerAnimationControll.curTextureColumns, pastPlayerAnimationControll.TextureCur.Height / pastPlayerAnimationControll.curTextureRows);
 
         }

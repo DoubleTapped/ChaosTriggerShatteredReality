@@ -9,10 +9,12 @@ namespace ChaosTriggerShatteredRealityMenus
 {
     class presentPlayerAnimationControll
     {
-       /* public Texture2D TextureAttack1 { get; set; }
+        public Texture2D TextureAttack1 { get; set; }
         public Texture2D TextureAttack2 { get; set; }
         public Texture2D TextureWalkRight { get; set; }
         public Texture2D TextureWalkLeft { get; set; }
+        public Texture2D TextureJumpRight { get; set; }
+        public Texture2D TextureJumpLeft { get; set; }
         public Texture2D TextureCur { get; set; }
 
         public int AtkRows1 { get; set; }
@@ -27,10 +29,18 @@ namespace ChaosTriggerShatteredRealityMenus
         public int WalkLeftRows { get; set; }
         public int WalkLeftColumns { get; set; }
 
+        public int JumpLeftRows { get; set; }
+        public int JumpLeftColumns { get; set; }
+
+        public int JumpRightRows { get; set; }
+        public int JumpRightColumns { get; set; }
+
         public int atkTotalFrames1;
         public int atkTotalFrames2;
         public int walkRTotalFrames;
         public int walkLTotalFrames;
+        public int jumpRTotalFrames;
+        public int jumpLTotalFrames;
 
         public int currentFrame;
         public int curTextureTotalFrames;
@@ -40,7 +50,7 @@ namespace ChaosTriggerShatteredRealityMenus
         public int counter = 0;
 
 
-        public animationControll(Texture2D textureAttack, int atkRows, int atkColumns, Texture2D textureWalkRight, int walkRightRows, int walkRightColumns, Texture2D textureWalkLeft, int walkLeftRows, int walkLeftColumns, Texture2D textureAttack2, int atkRows2, int atkColumns2)
+        public presentPlayerAnimationControll(Texture2D textureAttack, int atkRows, int atkColumns, Texture2D textureWalkRight, int walkRightRows, int walkRightColumns, Texture2D textureWalkLeft, int walkLeftRows, int walkLeftColumns, Texture2D textureAttack2, int atkRows2, int atkColumns2, Texture2D textureJumpRight, int jumpRightRows, int jumpRightColumns, Texture2D textureJumpLeft, int jumpLeftRows, int jumpLeftColumns)
         {
             TextureAttack1 = textureAttack;
             AtkRows1 = atkRows;
@@ -62,6 +72,16 @@ namespace ChaosTriggerShatteredRealityMenus
             WalkLeftColumns = walkLeftColumns;
             walkLTotalFrames = WalkLeftRows * WalkLeftColumns;
 
+            TextureJumpRight = textureJumpRight;
+            JumpRightColumns = jumpRightColumns;
+            JumpRightRows = jumpRightRows;
+            jumpRTotalFrames = JumpRightRows * JumpRightColumns;
+
+            TextureJumpLeft = textureJumpLeft;
+            JumpLeftRows = jumpLeftRows;
+            JumpLeftColumns = jumpLeftColumns;
+            jumpLTotalFrames = JumpLeftRows * JumpLeftColumns;
+
             TextureCur = TextureAttack1;
             currentFrame = 0;
 
@@ -70,7 +90,7 @@ namespace ChaosTriggerShatteredRealityMenus
             curTextureColumns = AtkColumns1;
         }
 
-        public void ChangeCurrentTexture(bool rightKeyDown, bool leftKeyDown, bool atkKeyDown, bool isFacingRight, bool isFacingLeft)
+        public void ChangeCurrentTexture(bool rightKeyDown, bool leftKeyDown, bool atkKeyDown, bool jumpKeyDown, bool isFacingRight, bool isFacingLeft)
         {
             if (rightKeyDown == true && TextureCur != TextureWalkRight)
             {
@@ -103,6 +123,23 @@ namespace ChaosTriggerShatteredRealityMenus
                     curTextureTotalFrames = atkTotalFrames2;
                 }
             }
+            else if (jumpKeyDown == true  && (TextureCur != TextureJumpRight || TextureCur != TextureJumpLeft))
+            {
+                if (isFacingRight == true)
+                {
+                    TextureCur = TextureJumpRight;
+                    curTextureRows = JumpRightRows;
+                    curTextureColumns = JumpRightColumns;
+                    curTextureTotalFrames = jumpRTotalFrames;
+                }
+                else if (isFacingLeft == true)
+                {
+                    TextureCur = TextureJumpLeft;
+                    curTextureRows = JumpLeftRows;
+                    curTextureColumns = JumpLeftColumns;
+                    curTextureTotalFrames = jumpLTotalFrames;
+                }
+            }
             else
             {
 
@@ -132,6 +169,6 @@ namespace ChaosTriggerShatteredRealityMenus
             spriteBatch.Begin();
             spriteBatch.Draw(TextureCur, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
-        }*/
+        }
     }
 }
