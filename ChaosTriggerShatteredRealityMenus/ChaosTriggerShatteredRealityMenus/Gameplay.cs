@@ -17,7 +17,7 @@ namespace ChaosTriggerShatteredRealityMenus
     {
         GraphicsDevice graphics;
         SpriteBatch spriteBatch;
-        private pastPlayerAnimationControll pastPlayerAnimationControll;
+        private presentPlayerAnimationControll player;
 
         Texture2D atkAnimation1;
         Texture2D walkRightAnimation;
@@ -71,15 +71,15 @@ namespace ChaosTriggerShatteredRealityMenus
             //spriteBatch = new SpriteBatch(graphics);
 
             // TODO: use this.Content to load your game content here
-            atkAnimation1 = Content.Load<Texture2D>("Sword");
-            walkRightAnimation = Content.Load<Texture2D>("Walking");
-            walkLeftAnimation = Content.Load<Texture2D>("Walking2");
-            atkAnimation2 = Content.Load<Texture2D>("sword2");
-            jumpingRight = Content.Load<Texture2D>("");
-            jumpingLeft = Content.Load<Texture2D>("");
+            atkAnimation1 = Content.Load<Texture2D>("present slash right");
+            walkRightAnimation = Content.Load<Texture2D>("present walking right");
+            walkLeftAnimation = Content.Load<Texture2D>("present walking left");
+            atkAnimation2 = Content.Load<Texture2D>("present slash left");
+            jumpingRight = Content.Load<Texture2D>("present jump right");
+            jumpingLeft = Content.Load<Texture2D>("present jump left");
 
-            pastPlayerAnimationControll = new pastPlayerAnimationControll(atkAnimation1, 1, 2, walkRightAnimation, 1, 3, walkLeftAnimation, 1, 3, atkAnimation2, 1, 2, );
-            playerSpriteBounds = new Rectangle((int)startingPoint.X, (int)startingPoint.Y, pastPlayerAnimationControll.TextureCur.Width / pastPlayerAnimationControll.curTextureColumns, pastPlayerAnimationControll.TextureCur.Height / pastPlayerAnimationControll.curTextureRows);
+            player = new presentPlayerAnimationControll(atkAnimation1, 1, 2, walkRightAnimation, 1, 3, walkLeftAnimation, 1, 3, atkAnimation2, 1, 2, jumpingRight, 1, 1, jumpingLeft, 1, 1);
+            playerSpriteBounds = new Rectangle((int)startingPoint.X, (int)startingPoint.Y, player.TextureCur.Width / player.curTextureColumns, player.TextureCur.Height / player.curTextureRows);
 
         }
 
@@ -107,27 +107,36 @@ namespace ChaosTriggerShatteredRealityMenus
                 isRightKeyDown = false;
                 isLeftKeyDown = true;
                 isAtkKeyDown = false;
+                jumpKeyDown = false;
                 facingRight = false;
                 facingLeft = true;
-                pastPlayerAnimationControll.ChangeCurrentTexture(isRightKeyDown, isLeftKeyDown, isAtkKeyDown, facingRight, facingLeft);
+                player.ChangeCurrentTexture(isRightKeyDown, isLeftKeyDown, isAtkKeyDown, jumpKeyDown, facingRight, facingLeft);
                 startingPoint.X -= 4;
-                pastPlayerAnimationControll.Update();
+                player.Update();
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
                 isRightKeyDown = true;
                 isLeftKeyDown = false;
                 isAtkKeyDown = false;
+                jumpKeyDown = false;
                 facingRight = true;
                 facingLeft = false;
-                pastPlayerAnimationControll.ChangeCurrentTexture(isRightKeyDown, isLeftKeyDown, isAtkKeyDown, facingRight, facingLeft);
+                player.ChangeCurrentTexture(isRightKeyDown, isLeftKeyDown, isAtkKeyDown, jumpKeyDown, facingRight, facingLeft);
                 startingPoint.X += 4;
-                pastPlayerAnimationControll.Update();
+                player.Update();
             }
 
             else if (Keyboard.GetState().IsKeyDown(Keys.Up))
             {
+                isRightKeyDown = false;
+                isLeftKeyDown = false;
+                isAtkKeyDown = false;
+                jumpKeyDown = true;
+
+                player.ChangeCurrentTexture(isRightKeyDown, isLeftKeyDown, isAtkKeyDown, jumpKeyDown, facingRight, facingLeft);
                 startingPoint.Y -= 4;
+                player.Update();
             }
 
             else if (Keyboard.GetState().IsKeyDown(Keys.Down))
@@ -140,23 +149,24 @@ namespace ChaosTriggerShatteredRealityMenus
                 isRightKeyDown = false;
                 isLeftKeyDown = false;
                 isAtkKeyDown = true;
-                pastPlayerAnimationControll.ChangeCurrentTexture(isRightKeyDown, isLeftKeyDown, isAtkKeyDown, facingRight, facingLeft);
-                pastPlayerAnimationControll.Update();
+                jumpKeyDown = false;
+                player.ChangeCurrentTexture(isRightKeyDown, isLeftKeyDown, isAtkKeyDown, jumpKeyDown, facingRight, facingLeft);
+                player.Update();
             }
 
             else
             {
                 if (isRightKeyDown == true)
                 {
-                    pastPlayerAnimationControll.currentFrame = 1;
+                    player.currentFrame = 1;
                 }
                 else if (isLeftKeyDown == true)
                 {
-                    pastPlayerAnimationControll.currentFrame = 1;
+                    player.currentFrame = 1;
                 }
                 else if (isAtkKeyDown == true)
                 {
-                    pastPlayerAnimationControll.currentFrame = 0;
+                    player.currentFrame = 0;
                 }
             }
 
@@ -164,10 +174,10 @@ namespace ChaosTriggerShatteredRealityMenus
             playerSpriteBounds.Y = (int)startingPoint.Y;
 
             // TODO: Add your update logic here
-            if (!graphics.Viewport.Bounds.Contains(playerSpriteBounds))
+            /*if (!graphics.Viewport.Bounds.Contains(playerSpriteBounds))
             {
                 startingPoint = oldPosition;
-            }
+            }*/
 
             base.Update(gameTime, graphicsDevice);
         }
@@ -178,10 +188,10 @@ namespace ChaosTriggerShatteredRealityMenus
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Draw(SpriteBatch spriteBatch)
         {
-            graphics.Clear(Color.CornflowerBlue);
+            //graphics.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            pastPlayerAnimationControll.Draw(spriteBatch, startingPoint);
+            player.Draw(spriteBatch, startingPoint);
 
             base.Draw(spriteBatch);
         }

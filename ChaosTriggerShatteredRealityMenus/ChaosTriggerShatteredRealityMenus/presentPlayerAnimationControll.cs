@@ -148,11 +148,18 @@ namespace ChaosTriggerShatteredRealityMenus
 
         public void Update()
         {
-            currentFrame++;
-
-            if (currentFrame == curTextureTotalFrames)
+            if (TextureCur == TextureJumpRight || TextureCur == TextureJumpLeft)
             {
                 currentFrame = 0;
+            }
+            else
+            {
+                currentFrame++;
+
+                if (currentFrame == curTextureTotalFrames)
+                {
+                    currentFrame = 0;
+                }
             }
         }
 
